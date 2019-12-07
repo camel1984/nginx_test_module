@@ -50,6 +50,8 @@ this module has been built and tested successfully with nginx-1.17.5
 
 
 
+install development suite:
+sudo yum groupinstall "Development Tools"
 
 
 

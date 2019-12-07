@@ -1,0 +1,101 @@
+
+
+python manage.py runfcgi method=prefork host=127.0.0.1 port=9001 protocol=fcgi
+
+http://ec2-34-229-232-9.compute-1.amazonaws.com:8080/polls/
+http://ec2-34-229-232-9.compute-1.amazonaws.com:8080/test.php
+
+
+https://stackoverflow.com/questions/34294614/cant-import-flup-server-fcgi/35061629
+
+scp -i ~/workspace/waf_roshi/ec2_key/390483586720_ec2.pem ec2-user@ec2-34-229-232-9.compute-1.amazonaws.com:/usr/share/nginx/html/test.php .
+
+sudo service php-fpm status
+sudo service php-fpm start
+sudo service php-fpm stop
+
+sudo nginx -s stop
+sudo nginx
+
+
+
+./manage.py -h
+
+http://ec2-34-229-232-9.compute-1.amazonaws.com/2019/10/21/test-title/
+http://ec2-34-229-232-9.compute-1.amazonaws.com/wp-admin/index.php
+http://ec2-34-229-232-9.compute-1.amazonaws.com/wp-admin/install.php
+
+wordpress:
+testuser
+123456
+
+mysql:
+root:123456
+wordpress:123456
+
+
+
+
+openssl genrsa -out compute-1.amazonaws.com.key 2048
+sudo openssl req -new -key compute-1.amazonaws.com.key -out compute-1.amazonaws.com.csr
+openssl x509 -req -days 365 -in  compute-1.amazonaws.com.csr -signkey compute-1.amazonaws.com.key -out compute-1.amazonaws.com.crt
+
+
+sudo service mariadb status
+
+
+对于owncloud:
+1. apache: dir必须是apache:apache own，不一定要有data subdir，permission也不一定是0777，后面二个看情况。
+2. nginx: dir必须是apache:apache own，不一定要有data subdir，permission也不一定是0777，后面二个看情况。
+其实apache和nginx用的都是php-fpm，而php-fpm的user:group是apache:apache，所以owncloud也必须是apache:apache own。
+
+
+testuser 123456
+
+mysqldb:
+
+nginx:
+nginx:123456 nginx
+apache:
+apache:123456 apache
+
+
+owncloud要用9.0.11 version:
+
+https://download.owncloud.org/community/owncloud-9.0.11.tar.bz2
+
+关掉selinux:
+sudo setenforce 0
+
+check php-fpm，apache，nginx的log:
+/var/log/php-fpm
+
+/var/log/nginx
+
+
+/var/log/httpd
+
+
+owncloud user:
+testuser 123456
+wordpress user:
+testuser 123456
+
+sudo nginx -s stop
+sudo nginx
+
+for wordpress:
+sudo service mysqld start
+sudo service php-fpm start
+sudo nginx
+
+for owncloud:
+sudo service mariadb start
+sudo service php-fpm start
+sudo nginx
+
+
+
+
+
+
