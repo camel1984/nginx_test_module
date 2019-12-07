@@ -48,9 +48,8 @@ https://ec2-3-84-156-249.compute-1.amazonaws.com/
 
 this module has been built and tested successfully with nginx-1.17.5
 
-
-
 install development suite:
+
 sudo yum groupinstall "Development Tools"
 
 
