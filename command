@@ -6,6 +6,9 @@ wordpress:
 
 https://ec2-34-229-232-9.compute-1.amazonaws.com
 
+admin page:
+https://ec2-34-229-232-9.compute-1.amazonaws.com/wp-admin/index.php
+
 testuser/123456
 
 ownCloud:
