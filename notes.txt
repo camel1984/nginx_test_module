@@ -100,5 +100,41 @@ sudo yum install epel-release
 sudo amazon-linux-extras install epel
 yum groupinstall "Development Tools"
 
+linux ships with mariadb instead of mysql:
+
+sudo yum install mariadb-server.x86_64
+sudo systemctl start mariadb.service
+sudo systemctl status mariadb.service
+sudo systemctl stop mariadb.service
+
+mysqladmin --user=root password 123456
+
+mysql -u root -p
+show databases;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
